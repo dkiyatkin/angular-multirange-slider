@@ -26,6 +26,9 @@ sliderDirective = ($parse, $compile) ->
       @_width - @handles.reduce (sum, handle) ->
         sum+handle.width()
       , 0
+    setTimeout =>
+      @updateRangeWidths()
+    , 0
     return this
 
   sliderController.$inject = ['$scope', '$element', '$attrs']

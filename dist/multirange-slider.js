@@ -43,6 +43,11 @@ sliderDirective = function($parse, $compile) {
         return sum + handle.width();
       }, 0);
     };
+    setTimeout((function(_this) {
+      return function() {
+        return _this.updateRangeWidths();
+      };
+    })(this), 0);
     return this;
   };
   sliderController.$inject = ['$scope', '$element', '$attrs'];
